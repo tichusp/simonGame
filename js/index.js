@@ -21,9 +21,9 @@ $(document).ready(function() {
 	function buttonPressed(obj) {
 		obj.audio.play();
 		obj.buttn.css({'background-color': obj.activeColor});
-    setTimeout(function() {
-         obj.buttn.css({'background-color': obj.normalColor});
-    }, 350);		
+		setTimeout(function() {
+			obj.buttn.css({'background-color': obj.normalColor});
+		}, 350);		
 	}
 	
 	function checkPlay() {
@@ -47,8 +47,8 @@ $(document).ready(function() {
 					addEvents();
 				} else {
 					$('#step').text(computerSequence.length < 10 ?
-													'0' + computerSequence.length :
-													computerSequence.length);
+										'0' + computerSequence.length :
+										computerSequence.length);
 					playComputerMoves();
 				}
 			}, 1500);
@@ -58,7 +58,7 @@ $(document).ready(function() {
 	}
 	
 	function playerButtonPressed() {
-    buttonPressed(this);
+		buttonPressed(this);
 		if (computerSequence.length) {
 			playerSequence.push(this);
 			if (checkPlay()) {
@@ -66,7 +66,8 @@ $(document).ready(function() {
 					$('#step').text('00');
 					playerSequence = [];
 					computerSequence = [];
-					alert(strict ? 'Congratulations, you have beaten the game in strict mode!' : 'Congratulations, you have beaten the game in normal mode. For a bigger challenge activate strict mode next time you play');
+					alert(strict ? 'Congratulations, you have beaten the game in strict mode!' : 
+							'Congratulations, you have beaten the game in normal mode. For a bigger challenge activate strict mode next time you play');
 				} else {
 					if (playerSequence.length === computerSequence.length) {
 						playerSequence = [];
@@ -114,8 +115,8 @@ $(document).ready(function() {
 		}
 		computerSequence.push(whichObj);
 		$('#step').text(computerSequence.length < 10 ?
-										'0' + computerSequence.length :
-										computerSequence.length);
+							'0' + computerSequence.length :
+							computerSequence.length);
 		playComputerMoves();
 	}
 	
@@ -126,14 +127,10 @@ $(document).ready(function() {
 		if (!computerSequence.length) {
 			$('#strict').on('click', strictStatus);
 		}
-		topLeft.buttn.on('mousedown',
-										 playerButtonPressed.bind(topLeft));
-		topRight.buttn.on('mousedown', 
-											playerButtonPressed.bind(topRight));
-		bottomLeft.buttn.on('mousedown', 
-												playerButtonPressed.bind(bottomLeft));
-		bottomRight.buttn.on('mousedown',
-												 playerButtonPressed.bind(bottomRight));
+		topLeft.buttn.on('mousedown', playerButtonPressed.bind(topLeft));
+		topRight.buttn.on('mousedown', playerButtonPressed.bind(topRight));
+		bottomLeft.buttn.on('mousedown', playerButtonPressed.bind(bottomLeft));
+		bottomRight.buttn.on('mousedown', playerButtonPressed.bind(bottomRight));
 	}
 	
 	function removeEvents() {
