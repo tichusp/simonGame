@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Simon</title>
+    
+    
+    
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+
+        <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    
+  </head>
+
+  <body>
+
+    <div id="outter-part">
+	  <button class="outter-btn outter-btn-top-left"></button>
+	  <button class="outter-btn outter-btn-top-right"></button>
+	  <button class="outter-btn outter-btn-bottom-left"></button>
+	  <button class="outter-btn outter-btn-bottom-right"></button>
+	</div>
+	<div id="inner-part" class="text-center">
+	  <h1>Simon</h1>
+	  <div id="container">
+		<div class="row">
+		  <div class="col-xs-4"> 
+			<div id="step">
+			  <p>00</p>
+			</div>
+		  </div>
+		  <div class="col-xs-4">
+			<button id="start" class="btn"></button>
+			<p>Start</p>
+		  </div>
+		  <div class="col-xs-4">
+			<button id="strict" class="btn"></button>
+			<p>Strict</p>
+			<div id="led"></div>
+		  </div>
+		</div>
+		  <div>
+		   <h2 class="inline-block">OFF</h2>
+		   <div class="toggle-part inline-block">
+			 <div class="toggle"></div>
+		   </div>
+		   <h2 class="inline-block">ON</h2>
+		 </div>
+	  </div>
+	</div>
+    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+
+        <script src="js/index.js"></script>
+
+    
+    
+    
+  </body>
+</html>
